@@ -11,40 +11,44 @@
         <h1>Form Joki MLBB</h1>
     </header>
     <main>
-        <div class="joki-form">
-            <h2>Isi Format Akun Lengkap</h2>
-            <form id="jokiForm">
-                <label for="namaAkun">Nama Akun:</label>
-                <input type="text" id="namaAkun" name="namaAkun" placeholder="Masukkan nama akun" required>
-                
+        <form id="joki-form">
+            <div class="form-group">
+                <label for="akun">Nama Akun:</label>
+                <input type="text" id="akun" name="akun" required>
+            </div>
+            <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Masukkan email akun" required>
-                
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Masukkan password akun" required>
-                
-                <label for="loginAkun">Log In Akun:</label>
-                <select id="loginAkun" name="loginAkun" required>
-                    <option value="Moonton">Moonton</option>
-                    <option value="Google">Google</option>
-                    <option value="Facebook">Facebook</option>
-                    <option value="TikTok">TikTok</option>
-                </select>
-                
-                <label for="rankSekarang">Rank Sekarang:</label>
-                <input type="text" id="rankSekarang" name="rankSekarang" placeholder="Masukkan rank saat ini" required>
-                
-                <label for="rankTujuan">Rank Tujuan:</label>
-                <input type="text" id="rankTujuan" name="rankTujuan" placeholder="Masukkan rank tujuan" required>
-                
-                <label for="requestHero">Request Hero (+10K):</label>
-                <input type="text" id="requestHero" name="requestHero" placeholder="Masukkan hero yang ingin digunakan (Opsional)">
-                
+                <input type="password" id="password" name="password" required>
+            </div>
+                        <label for="loginAkun">Log In Akun:</label>
+                    <select id="loginAkun" name="loginAkun" required>
+                        <option value="Moonton">Moonton</option>
+                        <option value="Google">Google</option>
+                        <option value="Facebook">Facebook</option>
+                        <option value="TikTok">TikTok</option>
+                    </select>
+            <div class="form-group">
+                <label for="rank-sekarang">Rank Sekarang:</label>
+                <input type="text" id="rank-sekarang" name="rank-sekarang" required>
+            </div>
+            <div class="form-group">
+                <label for="rank-tujuan">Rank Tujuan:</label>
+                <input type="text" id="rank-tujuan" name="rank-tujuan" required>
+            </div>
+            <div class="form-group">
+                <label for="request-hero">Request Hero (Nambah 10k):</label>
+                <input type="text" id="request-hero" name="request-hero">
+            </div>
+            <div class="form-group">
                 <label for="catatan">Catatan Untuk Penjoki:</label>
-                <textarea id="catatan" name="catatan" placeholder="Masukkan catatan tambahan untuk penjoki" rows="4"></textarea>
-                
-                <button type="submit">Pesan Sekarang</button>
-            </form>
+                <textarea id="catatan" name="catatan" rows="4"></textarea>
+            </div>
+            <button type="submit">Kirim Request</button>
+        </form>
     </main>
     <script src="assets/js/script.js"></script>
 </body>
