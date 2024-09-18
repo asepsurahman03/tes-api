@@ -1,30 +1,24 @@
-document.getElementById('jokiForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Mencegah form agar tidak submit secara default
+document.getElementById('joki-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Mencegah form dari pengiriman default
 
     // Mengambil data dari form
-    const namaAkun = document.getElementById('namaAkun').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const loginAkun = document.getElementById('loginAkun').value;
-    const rankSekarang = document.getElementById('rankSekarang').value;
-    const rankTujuan = document.getElementById('rankTujuan').value;
-    const requestHero = document.getElementById('requestHero').value || "Tidak ada";
-    const catatan = document.getElementById('catatan').value || "Tidak ada catatan tambahan";
+    const akun = encodeURIComponent(document.getElementById('akun').value);
+    const email = encodeURIComponent(document.getElementById('email').value);
+    const password = encodeURIComponent(document.getElementById('password').value);
+    const rankSekarang = encodeURIComponent(document.getElementById('rank-sekarang').value);
+    const rankTujuan = encodeURIComponent(document.getElementById('rank-tujuan').value);
+    const requestHero = encodeURIComponent(document.getElementById('request-hero').value);
+    const catatan = encodeURIComponent(document.getElementById('catatan').value);
 
     // Membuat pesan WhatsApp
-    const pesan = `Halo, saya ingin memesan jasa joki MLBB dengan format berikut:
-    - Nama Akun: ${namaAkun}
-    - Email: ${email}
-    - Password: ${password}
-    - Log In Akun: ${loginAkun}
-    - Rank Sekarang: ${rankSekarang}
-    - Rank Tujuan: ${rankTujuan}
-    - Request Hero: ${requestHero}
-    - Catatan: ${catatan}`;
+    const message = `Nama Akun: ${akun}%0AEmail: ${email}%0APassword: ${password}%0ARank Sekarang: ${rankSekarang}%0ARank Tujuan: ${rankTujuan}%0ARequest Hero: ${requestHero}%0ACatatan: ${catatan}`;
+    
+    // Nomor WhatsApp Anda
+    const phoneNumber = '+6285659838977'; // Ganti dengan nomor WhatsApp Anda
 
-    // Membuat URL WhatsApp (gunakan format nomor internasional)
-    const whatsappURL = `https://wa.me/6285351221602?text=${encodeURIComponent(pesan)}`;
+    // Membuat URL WhatsApp
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
-    // Redirect ke WhatsApp
-    window.location.href = whatsappURL;
+    // Redirect ke URL WhatsApp
+    window.location.href = whatsappUrl;
 });
