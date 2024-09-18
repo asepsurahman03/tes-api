@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Joki MLBB</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Form Joki MLBB</h1>
+    </header>
+    <main>
+        <form id="joki-form">
+            <div class="form-group">
+                <label for="akun">Nama Akun:</label>
+                <input type="text" id="akun" name="akun" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="rank-sekarang">Rank Sekarang:</label>
+                <input type="text" id="rank-sekarang" name="rank-sekarang" required>
+            </div>
+            <div class="form-group">
+                <label for="rank-tujuan">Rank Tujuan:</label>
+                <input type="text" id="rank-tujuan" name="rank-tujuan" required>
+            </div>
+            <div class="form-group">
+                <label for="request-hero">Request Hero (Nambah 10k):</label>
+                <input type="text" id="request-hero" name="request-hero">
+            </div>
+            <div class="form-group">
+                <label for="catatan">Catatan Untuk Penjoki:</label>
+                <textarea id="catatan" name="catatan" rows="4"></textarea>
+            </div>
+            <button type="submit">Kirim Request</button>
+        </form>
+    </main>
+    <script>
+        document.getElementById('joki-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form dari pengiriman default
+
+            // Mengambil data dari form
+            const akun = encodeURIComponent(document.getElementById('akun').value);
+            const email = encodeURIComponent(document.getElementById('email').value);
+            const password = encodeURIComponent(document.getElementById('password').value);
+            const rankSekarang = encodeURIComponent(document.getElementById('rank-sekarang').value);
+            const rankTujuan = encodeURIComponent(document.getElementById('rank-tujuan').value);
+            const requestHero = encodeURIComponent(document.getElementById('request-hero').value);
+            const catatan = encodeURIComponent(document.getElementById('catatan').value);
+
+            // Membuat pesan WhatsApp
+            const message = `Nama Akun: ${akun}%0AEmail: ${email}%0APassword: ${password}%0ARank Sekarang: ${rankSekarang}%0ARank Tujuan: ${rankTujuan}%0ARequest Hero: ${requestHero}%0ACatatan: ${catatan}`;
+            
+            // Nomor WhatsApp Anda
+            const phoneNumber = '+6285659838977'; // Ganti dengan nomor WhatsApp Anda
+
+            // Membuat URL WhatsApp
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+            // Redirect ke URL WhatsApp
+            window.location.href = whatsappUrl;
+        });
+    </script>
+</body>
+</html>
