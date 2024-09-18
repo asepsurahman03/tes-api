@@ -1,69 +1,897 @@
-/* styles.css */
+/* Style umum untuk dark mode */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f4f4;
+    background-color: #121212;
+    color: #e0e0e0;
 }
-
+/* Styling dasar */
 header {
-    background-color: #4CAF50;
+    background-color: #1e1e1e;
     color: white;
     text-align: center;
     padding: 1em 0;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-    padding: 20px;
-}
 
-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
+.fixed-top {
+    font-size: 25px;
     font-weight: bold;
 }
 
-.form-group input, .form-group textarea {
+.fixed-top span {
+    color: #e50914;
+}
+/* Nav bar tetap di atas */
+nav.fixed-top {
+    background-color: rgba(30, 30, 30, 0.8);
+    position: fixed;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-.form-group textarea {
-    resize: vertical;
+/* Styling untuk nav-left */
+.nav-left a {
+    color: white !important;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: inline-block;
+    font-size: 20px;
+    font-style: italic;
 }
 
-button {
-    background-color: #4CAF50;
+/* Styling untuk nav-right */
+.nav-right {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.nav-right ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.nav-right ul li {
+    margin: 0 15px;
+}
+
+.nav-right ul li a {
     color: white;
-    border: none;
-    padding: 15px 20px;
-    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 10px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.nav-right ul li a:hover {
+    background-color: #575757;
+}
+
+/* Style ikon di nav-right */
+.nav-right ul li a i {
+    margin-right: 8px;
+}
+
+.nav-right i:hover {
+    color: #AF504C;
+}
+
+/* Style untuk hamburger icon */
+.menu-toggle, .menu-close {
+    cursor: pointer;
+    
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .nav-right ul {
+        display: none; /* Sembunyikan menu pada mobile */
+        flex-direction: column;
+        background-color: rgba(30, 30, 30, 0.9);
+        position: absolute;
+        top: 65px;
+        right: 0;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        z-index: 999; /* Pastikan menu berada di atas */
+    }
+
+    .nav-right ul.active {
+        display: flex; /* Tampilkan menu jika aktif */
+    }
+
+    .nav-right ul li {
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block; /* Tampilkan hamburger menu */
+    }
+
+    .menu-close {
+        display: none; /* Tampilkan close icon */
+    }
+
+    .menu-toggle.active {
+        display: none; /* Sembunyikan hamburger saat menu terbuka */
+    }
+
+    .menu-close.active {
+        display: block; /* Tampilkan close icon saat menu terbuka */
+    }
+
+    .nav-right {
+        justify-content: flex-end;
+    }
+}
+
+
+
+/* Animasi mengetik */
+.typing-animation {
+    font-family: 'Raleway', sans-serif; /* Terapkan font Raleway */
+    overflow: hidden; /* Menyembunyikan teks yang melebihi container */
+    border-right: 0.15em solid orange; /* Garis vertikal di sebelah kanan teks */
+    white-space: nowrap; /* Menjaga teks dalam satu baris */
+    margin: 30px auto; /* Jarak atas dan bawah dari elemen lain */
+    letter-spacing: 0.1em; /* Spasi antar huruf */
+    animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+    font-size: 2rem; /* Sesuaikan ukuran font jika diperlukan */
+}
+
+.welcome-text {
+    color: #ff5722; /* Warna untuk 'Selamat' */
+}
+
+.isi-name {
+    color: #4CAF50; /* Warna untuk 'Codejoki.id' */
+}
+
+.brand-name {
+    color: #1e90ff; /* Warna untuk 'Codejoki.id' */
+}
+
+/* Animasi mengetik */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Animasi kedipan kursor */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+}
+
+
+/* Styles for Slideshow */
+.slideshow-container {
+    position: relative;
+    max-width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: none;
+    width: 100%;
+    transition: opacity 1s ease-in-out; /* Smooth transition for fade effect */
+}
+
+.slides img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* Navigation Icons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px; /* Half of the height to center vertically */
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none; /* Prevent text selection */
+    z-index: 1000; /* Make sure icons are on top of slides */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Dot Indicators */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* styles.css */
+body {
+    font-family: 'Raleway', sans-serif; /* Gunakan font Raleway */
+}
+
+/* Styling untuk section intro */
+#intro {
+    margin-bottom: ; /* Jarak bawah dari #intro ke elemen berikutnya */
+}
+
+
+/* Menambahkan jarak pada paragraph di #intro untuk visual yang lebih baik */
+#intro p {
+    margin-bottom: 0; /* Mengurangi jarak bawah antara paragraf */
+}
+
+
+#intro h2 {
+    font-family: 'Raleway', sans-serif; /* Font Raleway untuk teks */
+    font-size: 2rem; /* Ukuran font */
+    overflow: hidden; /* Sembunyikan teks yang tidak terlihat selama animasi */
+    white-space: nowrap; /* Mencegah teks membungkus ke baris berikutnya */
+    border-right: .15em solid orange; /* Garis bawah pada akhir teks */
+    animation: typing 4s steps(40, end), blink-caret .75s step-end infinite; /* Animasi ketikan dan kursor berkedip */
+}
+
+/* Animasi ketikan */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Animasi kursor berkedip */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+}
+
+/* Warna untuk masing-masing bagian */
+.promo {
+    color: #ff6347; /* Tomato red for "Promo" */
+}
+
+.exclusif {
+    color: #4CAF50; /* Green for "Ekslusif" */
+}
+
+.codejoki {
+    color: #1e90ff; /* Dodger blue for "Codejoki.id" */
+}
+
+/* Gaya untuk ikon */
+.icon {
+    font-size: 2rem; /* Ukuran ikon */
+    background: linear-gradient(90deg, #ff0000, #ff7e00, #ff0000); /* Gradient api untuk ikon */
+    -webkit-background-clip: text; /* Terapkan gradient ke ikon */
+    -webkit-text-fill-color: transparent; /* Sembunyikan warna ikon asli */
+    margin-right: 10px; /* Jarak antara ikon dan teks */
+}
+
+/* Gaya untuk deskripsi */
+.description {
+    font-size: 1rem; /* Ukuran font untuk deskripsi */
+    color: #333; /* Warna teks pada mode terang */
+    text-align: center; /* Rata tengah teks */
+    margin-top: 10px; /* Jarak atas antara heading dan deskripsi */
+    opacity: 0; /* Sembunyikan elemen awalnya */
+    transition: opacity 1s ease-in-out, color 0.5s ease-in-out; /* Transisi halus untuk animasi */
+}
+
+
+
+
+
+/* Style untuk elemen yang terkena blur */
+.blur {
+    filter: blur(1px);
+    transition: filter 0.5s ease;
+}
+
+
+/* Style untuk Taskbar */
+nav.fixed-top ul {
+    display: flex;
+    justify-content: flex-end; /* Menyusun item ke kanan */
+    margin: 0;
+    padding: 0;
+}
+
+nav.fixed-top ul li {
+    margin: 0 15px; /* Jarak antar item */
+}
+
+nav.fixed-top ul li a {
+    display: flex;
+    align-items: center;
+    font-size: 16px; /* Ukuran font */
+}
+
+
+
+#mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    z-index: 1001;
+}
+
+
+section {
+    padding: 80px 20px 20px; /* Tambahkan padding top untuk mengimbangi tinggi navbar atas */
+}
+
+section#contact a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    color: white;
+    background-color: #1e1e1e; /* Warna biru */
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+section#contact a:hover {
+    background-color: #575757; /* Warna biru lebih gelap untuk hover */
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 1em 0;
+}
+
+nav.fixed-bottom {
+    background-color: rgba(30, 30, 30, 0.8); /* Warna dengan transparansi */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    height: 60px;
+    backdrop-filter: blur(10px); /* Efek blur pada background */
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease; /* Transisi halus */
+}
+
+nav.fixed-bottom ul {
+    display: flex;
+    justify-content: center;
+}
+
+/* Media queries untuk memastikan tampilan responsif */
+@media (max-width: 768px) {
+    .nav-right ul {
+        display: none;
+    }
+
+    .fa-bars {
+        display: block;
+    }
+
+    .popup-hidden {
+        display: block;
+    }
+}
+
+@media (min-width: 769px) {
+    .fa-bars {
+        display: none;
+    }
+
+    .popup-hidden {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+
+    section p, .service p {
+        font-size: 1em;
+    }
+
+    .service {
+        margin-bottom: 20px;
+    }
+}
+
+main {
+    padding: 20px;
+}
+
+.service {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.service a.button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #1a1a1d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+/* Style untuk tombol dengan gambar sebagai background */
+.button-joki {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    padding: 8px;
+    background-color: transparent;
+    text-decoration: none;
+    border: 5px solid transparent;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 300px;
+    height: 120px;
+    transition: transform 0.3s ease;
+    box-shadow: var(--button-shadow-light);
+}
+
+.button-joki:hover {
+    border-color: transparent;
+    border-image: linear-gradient(to right, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5));
+    border-image-slice: 1;
+    transform: scale(1.05);
+}
+
+
+
+.joki-form {
+    background: linear-gradient(135deg, #1c1c1c, #2b2b2b);
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 700px;
+    margin: 40px auto;
+    color: white;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.joki-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #4a4a4a, #3b3b3b);
+    clip-path: circle(150px at 50% 0%);
+    z-index: -1;
+    transition: clip-path 0.6s ease;
+}
+
+.joki-form:hover::before {
+    clip-path: circle(600px at 50% 0%);
+}
+
+.joki-form h2 {
+    text-align: center;
+    margin-bottom: 5px;
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+.joki-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #cfcfcf;
     font-size: 16px;
-    border-radius: 4px;
+}
+
+.joki-form input, .joki-form select, .joki-form textarea {
+    width: 92%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #252525;
+    color: #ffffff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.joki-form input:focus, .joki-form select:focus, .joki-form textarea:focus {
+    outline: none;
+    border-color: #4a90e2;  /* Ganti merah dengan biru */
+    background-color: #2b2b2b;
+}
+
+.joki-form input::placeholder, .joki-form textarea::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+.joki-form button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #4a90e2, #357ABD);  /* Biru tua yang elegan */
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.4s ease, box-shadow 0.3s ease;
+}
+
+.joki-form button:hover {
+    background: linear-gradient(135deg, #357ABD, #2C5B8A);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.joki-form button:focus {
+    outline: none;
+}
+
+.joki-form textarea {
+    resize: none;
+    height: 120px;
+}
+
+.joki-form textarea:focus {
+    height: 150px;
+}
+
+.rank-container {
+    display: flex;
+    gap: 10px;
+}
+
+.rank-container select {
+    width: 30%; /* Menyisakan ruang di antara dropdown utama dan sub-rank */
+}
+
+.rank-container select:last-child {
+    width: 38%; /* Lebih lebar untuk menampung opsi dengan ikon */
+}
+
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+    .joki-form {
+        padding: 10px;
+        max-width: 145%;
+        margin: 2px;
+    }
+
+    .joki-form h2 {
+        font-size: 24px;
+    }
+
+    .joki-form input, .joki-form select, .joki-form textarea {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .joki-form button {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+
+
+/* styles.css */
+#requestHeroOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#requestHeroOptions label {
+    font-size: 14px; /* Ukuran font lebih kecil */
+    font-weight: bold;
+    color: #fff; /* Warna teks putih */
+}
+
+#requestHeroOptions div {
+    display: flex;
+    align-items: center;
+}
+
+#requestHeroOptions input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none; /* Untuk browser berbasis Webkit */
+    background-color: #fff;
+    border: 3px solid #dc3545; /* Merah untuk border */
+    border-radius: 50%;
+    width: 3px; /* Ukuran lebih kecil */
+    height: 2px; /* Ukuran lebih kecil */
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    margin-right: 8px; /* Jarak antara radio button dan label */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#requestHeroOptions input[type="radio"]:checked {
+    background-color: #dc3545; /* Merah untuk radio button terpilih */
+    border-color: #dc3545; /* Merah untuk border radio button terpilih */
+}
+
+#requestHeroOptions input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px; /* Ukuran lebih kecil untuk lingkaran di dalam */
+    height: 10px; /* Ukuran lebih kecil untuk lingkaran di dalam */
+    background-color: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#requestHeroOptions input[type="radio"]:focus {
+    border-color: #333; /* Warna border saat fokus */
+}
+
+#requestHeroOptions input[type="radio"] + label {
+    color: #fff; /* Warna label tetap putih */
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #45a049;
+
+/* styles.css */
+.order-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Jarak antara voucher dan tombol */
+}
+
+.voucher-container {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa; /* Latar belakang terang untuk kontras */
+    border: 1px solid #ddd; /* Border ringan */
+    border-radius: 5px; /* Sudut melengkung */
+    padding: 10px 15px; /* Ruang di dalam */
+    font-size: 14px; /* Ukuran font */
+    color: #333; /* Warna teks */
+}
+
+.voucher-container i {
+    color: #dc3545; /* Warna ikon voucher diskon */
+    margin-right: 8px; /* Jarak antara ikon dan teks */
+}
+
+.order-button {
+    display: flex;
+    align-items: center;
+    background-color: #007bff; /* Warna latar belakang tombol */
+    color: #fff; /* Warna teks tombol */
+    border: none;
+    border-radius: 5px; /* Sudut melengkung tombol */
+    padding: 10px 20px; /* Ruang di dalam tombol */
+    font-size: 16px; /* Ukuran font tombol */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Transisi untuk efek hover */
+    text-transform: uppercase; /* Menyusun teks tombol menjadi huruf kapital */
+}
+
+.order-button i {
+    margin-right: 8px; /* Jarak antara ikon dan teks tombol */
+}
+
+.order-button:hover {
+    background-color: #0056b3; /* Warna latar belakang tombol saat hover */
+    transform: scale(1.05); /* Efek pembesaran tombol saat hover */
+}
+
+.order-button:focus {
+    outline: none; /* Menghilangkan outline default saat fokus */
+    box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5); /* Efek shadow saat tombol fokus */
+}
+
+
+
+
+
+
+
+/* Styling untuk section menu-buttons */
+#menu-buttons {
+    margin: 0; /* Menghilangkan margin di atas dan bawah */
+    padding: 0.5; /* Menghilangkan padding */
+}
+
+.menu-button-container {
+    display: flex;
+    gap: 8px; /* Jarak antar tombol */
+    margin-bottom: 10px; /* Jarak bawah container tombol */
+
+.menu-button {
+    display: inline-block;
+    padding: 10px 20px; /* Jarak dalam tombol */
+    font-size: 14px; /* Ukuran font tombol lebih kecil */
+    font-weight: bold; /* Ketebalan font tombol */
+    text-decoration: none; /* Menghapus garis bawah pada teks */
+    color: white; /* Warna teks tombol */
+    background-color: #8b0000; /* Warna latar belakang tombol */
+    border-radius: 4px; /* Sudut tombol yang melengkung lebih kecil */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Bayangan tombol */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Efek transisi saat hover */
+    border: none; /* Menghapus border tombol */
+}
+
+.menu-button:hover {
+    background-color: #45a049; /* Warna latar belakang saat hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4); /* Bayangan tombol saat hover */
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+/* Styling untuk section konten */
+.content-section {
+    display: none; /* Sembunyikan semua section secara default */
+    padding: 10px 20px; /* Padding untuk konten */
+    margin: 0; /* Menghilangkan margin atas dan bawah */
+    text-align: center; /* Rata tengah teks */
+}
+
+/* Menampilkan section aktif */
+.content-section.active {
+    display: block; /* Tampilkan section yang aktif */
+}
+
+/* Styling untuk tombol menu */
+.menu-button {
+    display: inline-block;
+    padding: 10px 20px; /* Jarak dalam tombol */
+    font-size: 14px; /* Ukuran font tombol lebih kecil */
+    font-weight: bold; /* Ketebalan font tombol */
+    text-decoration: none; /* Menghapus garis bawah pada teks */
+    color: white; /* Warna teks tombol */
+    background-color: grey; /* Warna latar belakang tombol non-aktif */
+    border-radius: 4px; /* Sudut tombol yang melengkung lebih kecil */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Bayangan tombol */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Efek transisi saat hover */
+}
+
+.menu-button.active {
+    background-color: blue; /* Warna latar belakang tombol aktif */
+}
+
+.menu-button:hover {
+    background-color: #8b0000; /* Warna latar belakang saat hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4); /* Bayangan tombol saat hover */
+}
+
+
+/* Style untuk tombol dengan gambar sebagai background */
+.joki-button {
+    display: flex; /* Menggunakan flexbox untuk menyusun konten dalam tombol */
+    align-items: center; /* Vertikal align gambar dan teks */
+    margin: 5px; /* Jarak antar tombol */
+    padding: 8px; /* Jarak dalam tombol */
+    background-color: transparent; /* Latar belakang transparan */
+    text-decoration: none; /* Menghapus garis bawah pada teks */
+    border: 5px solid transparent; /* Border transparan */
+    border-radius: 5px; /* Sudut tombol yang melengkung */
+    overflow: hidden; /* Untuk memastikan gambar tidak keluar dari area border */
+    width: 300px; /* Atur lebar tombol sesuai kebutuhan */
+    height: 120px; /* Atur tinggi tombol sesuai kebutuhan */
+    transition: transform 0.3s ease; /* Efek transisi untuk hover */
+    box-shadow: var(--button-shadow-light); /* Bayangan default */
+}
+
+.joki-button:hover {
+    border-color: transparent; /* Menghapus border solid */
+    border-image: linear-gradient(to right, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5)); /* Gradient RGB */
+    border-image-slice: 1; /* Mengatur slicing border image */
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+/* Gaya untuk konten dalam tombol */
+.joki-content {
+    position: relative; /* Agar teks dan ikon berada di atas gambar background */
+    width: 100%;
+    height: 100%;
+    display: flex; /* Flexbox untuk menyusun konten */
+    align-items: center; /* Vertikal align gambar dan teks */
+}
+
+/* Gaya untuk gambar background */
+.joki-background {
+    position: absolute; /* Agar gambar berada di belakang teks */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar memenuhi area tanpa distorsi */
+    opacity: 0.5; /* Membuat gambar lebih transparan */
+    z-index: -1; /* Memastikan gambar berada di belakang teks dan ikon */
+}
+
+/* Gaya untuk gambar ikon */
+.joki-icon {
+    width: 20px; /* Sesuaikan ukuran ikon dengan area tombol */
+    height: 20px; /* Sesuaikan ukuran ikon dengan area tombol */
+    margin-right: 12px; /* Jarak antara ikon dan teks */
+    z-index: 1; /* Memastikan ikon berada di depan gambar background */
+}
+
+/* Gaya untuk teks dalam tombol */
+.joki-text {
+    position: relative; /* Agar teks berada di atas gambar background */
+    color: white; /* Warna teks putih di semua mode */
+    font-size: 18px; /* Ukuran font */
+    font-weight: bold; /* Ketebalan font */
+    text-shadow: var(--text-shadow-light); /* Bayangan teks untuk mode terang */
+    z-index: 1; /* Memastikan teks berada di depan gambar background */
+    display: flex; /* Menggunakan flexbox untuk memposisikan teks */
+    align-items: center; /* Vertikal align teks di tengah */
+    justify-content: center; /* Horizontal align teks di tengah */
+    text-align: center; /* Rata tengah teks */
+    width: 100%; /* Lebar penuh dari kontainer tombol */
+    height: 100%; /* Tinggi penuh dari kontainer tombol */
+}
+
+
+/* Container untuk menyusun tombol-tombol dalam satu baris */
+.joki-container {
+    display: flex; /* Flexbox untuk susunan horizontal */
+    gap: 10px; /* Jarak antar tombol */
+    margin-top: 20px; /* Jarak atas container tombol */
+    justify-content: center; /* Rata tengah tombol-tombol dalam container */
+    flex-wrap: wrap; /* Agar tombol bisa turun ke baris berikutnya jika layar terlalu kecil */
 }
