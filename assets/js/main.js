@@ -75,9 +75,10 @@ document.getElementById('jokiForm').addEventListener('submit', function(event) {
                 + `Catatan Untuk Penjoki: ${catatan}`;
     
     // Kirim pesan ke WhatsApp
-    var whatsappURL = `https://wa.me/6285351221692?text=${encodeURIComponent(message)}`;
+    var whatsappURL = `https://wa.me/6285351221602?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, '_blank');
 });
+
 
 
 
