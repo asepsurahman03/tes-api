@@ -1,48 +1,713 @@
 <!DOCTYPE html>
-<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Joki MLBB</title>
+    <title>Beranda - Codejoki.id</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codejoki.id</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- <script src="app.js" defer></script> -->
 </head>
 <body>
-    <header>
-        <h1>Form Joki MLBB</h1>
-    </header>
-    <main>
-        <form id="joki-form">
-            <div class="form-group">
-                <label for="akun">Nama Akun:</label>
-                <input type="text" id="akun" name="akun" required>
+    <nav class="fixed-top">
+        <div class="nav-left">
+            <a href="index.html">Code<span>joki.</span>id</a>
+        </div>
+        <div class="nav-right">
+            <div class="menu-toggle">
+                
             </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+                <li><a href="pages/joki-mlbb.html"><i class="fas fa-gamepad"></i> Joki Games</a></li>
+                <li><a href="pages/top-up-games.html"><i class="fas fa-credit-card"></i> Top Up Games</a></li>
+                <li><a href="pages/tournament.html"><i class="fas fa-trophy"></i> Tournament</a></li>
+                <li><a href="pages/contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    
+
+    <main id="content">
+        <header>
+            <h1></h1>
+        </header>
+        <h1 class="typing-animation">
+            <center>
+                <span class="welcome-text">Selamat</span> <span class="isi-name">Datang</span> di <span class="brand-name">Codejoki.id</span>
+            </center>
+        </h1>
+        
+      <!-- Tambahkan Gambar disini -->
+      <div class="slideshow-container">
+        <img class="slides fade" src="images/2yhh7iif.png" alt="Gambar 1">
+        <img class="slides fade" src="images/38b4jkgd.png" alt="Gambar 2">
+        <img class="slides fade" src="images/t8pkq12v.png" alt="Gambar 3">
+
+        <!-- Navigation Icons -->
+        <a class="prev" onclick="plusSlides(-1)"><i class="fas fa-chevron-left"></i></a>
+        <a class="next" onclick="plusSlides(1)"><i class="fas fa-chevron-right"></i></a>
+            
+        <!-- Dot Indicators -->
+        <div class="dot-container">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
+        <section id="intro">
+            <h2 class="fade-in">
+                <i class="fas fa-bolt icon"></i> <!-- Menambahkan ikon petir -->
+                <span class="promo">Promo</span> 
+                <span class="exclusif">Ekslusif</span> 
+                <span class="codejoki">Codejoki.id</span>
+            </h2>
+            <p class="description fade-in">
+            Berikut adalah beberapa produk yang paling populer saat ini.
+            </p>
+            <p>Codejoki.id adalah platform terbaik untuk kebutuhan gaming Anda. Kami menawarkan berbagai layanan seperti joki game, top up diamond, dan penyelenggaraan turnamen. Jelajahi layanan kami di bawah ini untuk informasi lebih lanjut.</p>
+        </section>
+
+
+        <section id="menu-buttons"></section>
+            <div class="menu-button-container">
+                <button id="btn-joki" class="menu-button" data-target="joki-mlbb">Joki</button>
+                <button id="btn-top-up" class="menu-button" data-target="top-up">Top Up</button>
+                <button id="btn-tournament" class="menu-button" data-target="tournament">Tournament</button>
+                <button id="btn-voucher" class="menu-button" data-target="voucher">Voucher</button>
             </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+        </section>
+
+
+
+
+        <section id="joki-mlbb" class="content-section">
+            <div class="joki-form">
+                <h2>Isi Format Akun Lengkap</h2>
+                <form id="jokiForm">
+                    <label for="namaAkun">Nama Akun:</label>
+                    <input type="text" id="namaAkun" name="namaAkun" placeholder="Masukkan nama akun" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Masukkan email akun" required>
+                    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Masukkan password akun" required>
+                    
+                    <label for="loginAkun">Log In Akun:</label>
+                    <select id="loginAkun" name="loginAkun" required>
+                        <option value="Moonton">Moonton</option>
+                        <option value="Google">Google</option>
+                        <option value="Facebook">Facebook</option>
+                        <option value="TikTok">TikTok</option>
+                    </select>
+                    
+                    <label for="rankSekarang">Rank Sekarang:</label>
+                    <div class="rank-container">
+                        <select id="rankSekarang" name="rankSekarang" required>
+                            <option value="" disabled selected>Rankmu saat ini</option> <!-- Teks default -->
+                            <option value="GrandMaster">Grand Master</option>
+                            <option value="Epic">Epic</option>
+                            <option value="Legend">Legend</option>
+                            <option value="Mythic">Mythic</option>
+                            <option value="Honnor">Honnor</option>
+                            <option value="Glory">Glory</option>
+                            <option value="Immortal">Immortal</option>
+                            <option value="MCL Weakly">MCL Weakly</option>
+                            <option value="MCL Season">MCL Season</option>
+                        </select>
+                        <select id="subRankSekarang" name="subRankSekarang" disabled>
+                            <!-- Opsi sub-rank akan dimuat oleh JavaScript -->
+                        </select>
+                        <select id="iconRankSekarang" name="iconRankSekarang" disabled>
+                            <!-- Opsi dengan ikon akan dimuat oleh JavaScript -->
+                        </select>
+                    </div>
+                    
+                    <label for="rankTujuan">Rank Tujuan:</label>
+                    <div class="rank-container">
+                        <select id="rankTujuan" name="rankTujuan" required>
+                            <option value="" disabled selected>Rank tujuanmu</option> <!-- Teks default -->
+                            <option value="GrandMaster">Grand Master</option>
+                            <option value="Epic">Epic</option>
+                            <option value="Legend">Legend</option>
+                            <option value="Mythic">Mythic</option>
+                            <option value="Honnor">Honnor</option>
+                            <option value="Glory">Glory</option>
+                            <option value="Immortal">Immortal</option>
+                            <option value="MCL Championships">MCL Championships</option>
+                        </select>
+                        <select id="subRankTujuan" name="subRankTujuan" disabled>
+                            <!-- Opsi sub-rank akan dimuat oleh JavaScript -->
+                        </select>
+                        <select id="iconRankTujuan" name="iconRankTujuan" disabled>
+                            <!-- Opsi dengan ikon akan dimuat oleh JavaScript -->
+                        </select>
+                    </div>
+        
+                    
+                        <label for="requestHero">Request Hero (+10K):</label>
+                        <div id="requestHeroOptions">
+                        <div>
+                            <input type="radio" id="requestHeroYes" name="requestHero" value="Yes">
+                            <label for="requestHeroYes">Iya</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="requestHeroNo" name="requestHero" value="No">
+                            <label for="requestHeroNo">Tidak</label>
+                        </div>
+                    </div>
+                    
+                    <input type="text" id="requestHeroDetail" name="requestHeroDetail" placeholder="Tulis hero yang ingin dipakai...                                   Kosongkan jika no request-hero">
+                    
+                    
+                    <label for="catatan">Catatan Untuk Penjoki:</label>
+                    <textarea id="catatan" name="catatan" placeholder="Masukkan catatan tambahan untuk penjoki" rows="4"></textarea>
+                    
+                                    <!-- HTML -->
+                    <div class="order-container">
+                        <div class="voucher-container">
+                            <i class="fas fa-tag"></i> <!-- Ikon voucher diskon -->
+                            <span>Voucher Diskon</span>
+                        </div>
+                        <button type="submit" class="order-button">
+                            <i class="fas fa-shopping-cart"></i> <!-- Ikon belanja -->
+                            Pesan Sekarang
+                        </button>
+                    </div>
+
+                </form>
             </div>
-            <div class="form-group">
-                <label for="rank-sekarang">Rank Sekarang:</label>
-                <input type="text" id="rank-sekarang" name="rank-sekarang" required>
+        </section>
+        
+        
+        
+                    
+
+        
+
+
+        <!-- <section id="joki-mlbb" class="content-section">
+            <div class="joki-container">
+                <a href="pages/joki-mlbb.html" class="joki-button">
+                    <div class="joki-content">
+                        <img src="images/3656639.jpg" alt="Joki MLBB Background" class="joki-background">
+                        <img src="images/joki.jpg" alt="Joki MLBB Icon" class="joki-icon">
+                        <span class="joki-text">Joki Mobile Legends</span>
+                    </div>
+                </a>
+                <a href="pages/joki-mlbb.html" class="joki-button">
+                    <div class="joki-content">
+                        <img src="images/3656639.jpg" alt="Joki MLBB Background" class="joki-background">
+                        <img src="images/joki.jpg" alt="Joki MLBB Icon" class="joki-icon">
+                        <span class="joki-text">Joki MLBB</span>
+                    </div>
+                </a>
+                <a href="pages/joki-mlbb.html" class="joki-button">
+                    <div class="joki-content">
+                        <img src="images/3656639.jpg" alt="Joki MLBB Background" class="joki-background">
+                        <img src="images/joki.jpg" alt="Joki MLBB Icon" class="joki-icon">
+                        <span class="joki-text">Joki MLBB</span>
+                    </div>
+                </a>
             </div>
-            <div class="form-group">
-                <label for="rank-tujuan">Rank Tujuan:</label>
-                <input type="text" id="rank-tujuan" name="rank-tujuan" required>
+        </section> -->
+        
+
+
+        
+        <!-- <section id="joki-mlbb" class="content-section">
+            <div class="image-container">
+                <div class="button-container">
+                    <button class="image-button" style="background-color: rgb(255, 0, 0);">Button 1</button>
+                    <button class="image-button" style="background-color: rgb(0, 255, 0);">Button 2</button>
+                    <button class="image-button" style="background-color: rgb(0, 0, 255);">Button 3</button>
+                    <button class="image-button" style="background-color: rgb(255, 165, 0);">Button 4</button>
+                    <button class="image-button" style="background-color: rgb(75, 0, 130);">Button 5</button>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="request-hero">Request Hero (Nambah 10k):</label>
-                <input type="text" id="request-hero" name="request-hero">
-            </div>
-            <div class="form-group">
-                <label for="catatan">Catatan Untuk Penjoki:</label>
-                <textarea id="catatan" name="catatan" rows="4"></textarea>
-            </div>
-            <button type="submit">Kirim Request</button>
-        </form>
+            <h2>Joki MLBB</h2>
+            <p>Informasi tentang Joki MLBB...</p>
+        </section>
+         -->
+        
+        <section id="top-up" class="content-section">
+            <!-- Tambahkan Gambar dalam button  -->
+            <h2>Top Up Games</h2>
+            <p>Informasi tentang Top Up Games...</p>
+        </section>
+        
+        <section id="tournament" class="content-section">
+            <img src="862350.png" alt="">
+            <h2>Tournament</h2>
+            <p>Informasi tentang Tournament...</p>
+        </section>
+        
+        <section id="voucher" class="content-section">
+            <img src="862350.png" alt="">
+            <h2>Voucher</h2>
+            <p>Informasi tentang Voucher...</p>
+        </section>
+
     </main>
-    <script src="assets/js/script.js"></script>
+        
+        
+
+    
+            <!-- <div id="joki-mlbb-content" class="content-section">
+                <h3>Joki MLBB</h3>
+                <p>Penjelasan untuk Joki MLBB...</p>
+                <!-- Tambahkan konten atau gambar relevan untuk Joki MLBB -->
+            <!-- </div>
+    
+            <div id="top-up-games-content" class="content-section">
+                <h3>Top Up Games</h3>
+                <p>Penjelasan untuk Top Up Games...</p>
+                <!-- Tambahkan konten atau gambar relevan untuk Top Up Games -->
+            <!-- </div>
+    
+            <div id="tournament-content" class="content-section">
+                <h3>Tournament</h3>
+                <p>Penjelasan untuk Tournament...</p>
+                <!-- Tambahkan konten atau gambar relevan untuk Tournament -->
+            <!-- </div>
+        </section> --> 
+    
+        
+        
+        
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 Codejoki.id. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://wa.me/your-number" target="_blank" class="footer-link" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="https://www.instagram.com/your-profile" target="_blank" class="footer-link" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@your-profile" target="_blank" class="footer-link" title="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                        <span>TikTok</span>
+                    </a>
+                    <a href="contact.html" class="footer-link" title="Contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+        
+
+
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const rankSekarang = document.getElementById('rankSekarang');
+                const rankTujuan = document.getElementById('rankTujuan');
+                const subRankSekarang = document.getElementById('subRankSekarang');
+                const subRankTujuan = document.getElementById('subRankTujuan');
+                const iconRankSekarang = document.getElementById('iconRankSekarang');
+                const iconRankTujuan = document.getElementById('iconRankTujuan');
+            
+                function updateOptions(event) {
+                    const selectedValue = event.target.value;
+                    const subRanks = getSubRanks(selectedValue);
+                    const iconRanks = getIconRanks(selectedValue);
+            
+                    const targetSelect = event.target === rankSekarang ? subRankSekarang : subRankTujuan;
+                    const iconSelect = event.target === rankSekarang ? iconRankSekarang : iconRankTujuan;
+            
+                    // Update sub-rank options
+                    targetSelect.innerHTML = ''; // Clear old options
+                    if (subRanks.length > 0) {
+                        targetSelect.disabled = false;
+                        subRanks.forEach(subRank => {
+                            const option = document.createElement('option');
+                            option.textContent = subRank;
+                            option.value = subRank;
+                            targetSelect.appendChild(option);
+                        });
+                    } else {
+                        targetSelect.disabled = true;
+                    }
+            
+                    // Update icon options
+                    iconSelect.innerHTML = ''; // Clear old options
+                    if (iconRanks.length > 0) {
+                        iconSelect.disabled = false;
+                        iconRanks.forEach(iconRank => {
+                            const option = document.createElement('option');
+                            option.innerHTML = iconRank; // Use innerHTML for icons
+                            option.value = iconRank;
+                            iconSelect.appendChild(option);
+                        });
+                    } else {
+                        iconSelect.disabled = true;
+                    }
+                }
+            
+                function getSubRanks(rank) {
+                    switch (rank) {
+                        case 'GrandMaster':
+                            return ['Grand Master I', 'Grand Master II', 'Grand Master III', 'Grand Master IV', 'Grand Master V'];
+                        case 'Epic':
+                            return ['Epic I', 'Epic II', 'Epic III', 'Epic IV', 'Epic V'];
+                        case 'Legend':
+                            return ['Legend I', 'Legend II', 'Legend III', 'Legend IV', 'Legend V'];
+                        case 'Mythic':
+                            return ['Mythic 1 - 24', 'Mythic Grading'];
+                        case 'Honnor':
+                            return ['Honnor 25 - 49'];
+                        case 'Glory':
+                            return ['Glory 50- 80', 'Glory 81 - 99'];
+                        case 'Immortal':
+                            return ['Immortal 100', 'Immortal 200++'];
+                        case 'MCL Championships':
+                            return ['MCL Weakly', 'MCL Season'];
+                        default:
+                            return [];
+                    }
+                }
+
+
+            
+                function getIconRanks(rank) {
+    switch (rank) {
+        case 'GrandMaster':
+        case 'GrandMasterI':
+            return [
+                'Grand Master I &#9733; I', 'Grand Master I &#9733; II', 'Grand Master I &#9733; III', 'Grand Master I &#9733; IV', 'Grand Master I &#9733; V',
+                'Grand Master III &#9733; I', 'Grand Master III &#9733; II', 'Grand Master III &#9733; III', 'Grand Master III &#9733; IV', 'Grand Master III &#9733; V',
+                'Grand Master IV &#9733; I', 'Grand Master IV &#9733; II', 'Grand Master IV &#9733; III', 'Grand Master IV &#9733; IV', 'Grand Master IV &#9733; V',
+                'Grand Master V &#9733; I', 'Grand Master V &#9733; II', 'Grand Master V &#9733; III', 'Grand Master V &#9733; IV', 'Grand Master V &#9733; V'
+            ];
+        case 'Epic':
+            return [
+            'Grand Master II &#9733; I', 'Grand Master II &#9733; II', 'Grand Master II &#9733; III', 'Grand Master II &#9733; IV', 'Grand Master II &#9733; V',
+               
+                'Epic II &#9733; I', 'Epic II &#9733; II', 'Epic II &#9733; III', 'Epic II &#9733; IV', 'Epic II &#9733; V',
+                'Epic III &#9733; I', 'Epic III &#9733; II', 'Epic III &#9733; III', 'Epic III &#9733; IV', 'Epic III &#9733; V',
+                'Epic IV &#9733; I', 'Epic IV &#9733; II', 'Epic IV &#9733; III', 'Epic IV &#9733; IV', 'Epic IV &#9733; V',
+                'Epic V &#9733; I', 'Epic V &#9733; II', 'Epic V &#9733; III', 'Epic V &#9733; IV', 'Epic V &#9733; V'
+            ];
+        case 'Legend':
+            return [
+                'Legend I &#9733; I', 'Legend I &#9733; II', 'Legend I &#9733; III', 'Legend I &#9733; IV', 'Legend I &#9733; V',
+                'Legend II &#9733; I', 'Legend II &#9733; II', 'Legend II &#9733; III', 'Legend II &#9733; IV', 'Legend II &#9733; V',
+                'Legend III &#9733; I', 'Legend III &#9733; II', 'Legend III &#9733; III', 'Legend III &#9733; IV', 'Legend III &#9733; V',
+                'Legend IV &#9733; I', 'Legend IV &#9733; II', 'Legend IV &#9733; III', 'Legend IV &#9733; IV', 'Legend IV &#9733; V',
+                'Legend V &#9733; I', 'Legend V &#9733; II', 'Legend V &#9733; III', 'Legend V &#9733; IV', 'Legend V &#9733; V'
+            ];
+      
+            case 'Mythic':
+            return [
+                'Mythic &#9733; 1', 'Mythic &#9733; 2', 'Mythic &#9733; 3', 'Mythic &#9733; 4', 'Mythic &#9733; 5',
+                'Mythic &#9733; 6', 'Mythic &#9733; 7', 'Mythic &#9733; 8', 'Mythic &#9733; 9', 'Mythic &#9733; 10',
+                'Mythic &#9733; 11', 'Mythic &#9733; 12', 'Mythic &#9733; 13', 'Mythic &#9733; 14', 'Mythic &#9733; 15',
+                'Mythic &#9733; 16', 'Mythic &#9733; 17', 'Mythic &#9733; 18', 'Mythic &#9733; 19', 'Mythic &#9733; 20',
+                'Mythic &#9733; 21', 'Mythic &#9733; 22', 'Mythic &#9733; 23', 'Mythic &#9733; 24'
+            ];
+
+            case 'Honnor':
+            return [
+                'Honnor &#9733; 25', 'Honnor &#9733; 26', 'Honnor &#9733; 27', 'Honnor &#9733; 28', 'Honnor &#9733; 29',
+                'Honnor &#9733; 30', 'Honnor &#9733; 31', 'Honnor &#9733; 32', 'Honnor &#9733; 33', 'Honnor &#9733; 34',
+                'Honnor &#9733; 35', 'Honnor &#9733; 36', 'Honnor &#9733; 37', 'Honnor &#9733; 38', 'Honnor &#9733; 39',
+                'Honnor &#9733; 40', 'Honnor &#9733; 41', 'Honnor &#9733; 42', 'Honnor &#9733; 43', 'Honnor &#9733; 44',
+                'Honnor &#9733; 45', 'Honnor &#9733; 46', 'Honnor &#9733; 47', 'Honnor &#9733; 48', 'Honnor &#9733; 49'
+            ];
+
+        case 'Glory':
+            return [
+                'Glory &#9733; 50', 'Glory &#9733; 51', 'Glory &#9733; 52', 'Glory &#9733; 53', 'Glory &#9733; 54',
+                'Glory &#9733; 55', 'Glory &#9733; 56', 'Glory &#9733; 57', 'Glory &#9733; 58', 'Glory &#9733; 59',
+                'Glory &#9733; 60', 'Glory &#9733; 61', 'Glory &#9733; 62', 'Glory &#9733; 63', 'Glory &#9733; 64',
+                'Glory &#9733; 65', 'Glory &#9733; 66', 'Glory &#9733; 67', 'Glory &#9733; 68', 'Glory &#9733; 69',
+                'Glory &#9733; 70', 'Glory &#9733; 71', 'Glory &#9733; 72', 'Glory &#9733; 73', 'Glory &#9733; 74',
+                'Glory &#9733; 75', 'Glory &#9733; 76', 'Glory &#9733; 77', 'Glory &#9733; 78', 'Glory &#9733; 79',
+                'Glory &#9733; 80', 'Glory &#9733; 81', 'Glory &#9733; 82', 'Glory &#9733; 83', 'Glory &#9733; 84',
+                'Glory &#9733; 85', 'Glory &#9733; 86', 'Glory &#9733; 87', 'Glory &#9733; 88', 'Glory &#9733; 89',
+                'Glory &#9733; 90', 'Glory &#9733; 91', 'Glory &#9733; 92', 'Glory &#9733; 93', 'Glory &#9733; 94',
+                'Glory &#9733; 95', 'Glory &#9733; 96', 'Glory &#9733; 97', 'Glory &#9733; 98', 'Glory &#9733; 99'
+            ];
+            case 'Immortal':
+            return [
+                'Immortal &#9733; 100', 'Immortal &#9733; 101', 'Immortal &#9733; 102', 'Immortal &#9733; 103', 'Immortal &#9733; 104',
+                'Immortal &#9733; 105', 'Immortal &#9733; 106', 'Immortal &#9733; 107', 'Immortal &#9733; 108', 'Immortal &#9733; 109',
+                'Immortal &#9733; 110', 'Immortal &#9733; 111', 'Immortal &#9733; 112', 'Immortal &#9733; 113', 'Immortal &#9733; 114',
+                'Immortal &#9733; 115', 'Immortal &#9733; 116', 'Immortal &#9733; 117', 'Immortal &#9733; 118', 'Immortal &#9733; 119',
+                'Immortal &#9733; 120', 'Immortal &#9733; 121', 'Immortal &#9733; 122', 'Immortal &#9733; 123', 'Immortal &#9733; 124',
+                'Immortal &#9733; 125', 'Immortal &#9733; 126', 'Immortal &#9733; 127', 'Immortal &#9733; 128', 'Immortal &#9733; 129',
+                'Immortal &#9733; 130', 'Immortal &#9733; 131', 'Immortal &#9733; 132', 'Immortal &#9733; 133', 'Immortal &#9733; 134',
+                'Immortal &#9733; 135', 'Immortal &#9733; 136', 'Immortal &#9733; 137', 'Immortal &#9733; 138', 'Immortal &#9733; 139',
+                'Immortal &#9733; 140', 'Immortal &#9733; 141', 'Immortal &#9733; 142', 'Immortal &#9733; 143', 'Immortal &#9733; 144',
+                'Immortal &#9733; 145', 'Immortal &#9733; 146', 'Immortal &#9733; 147', 'Immortal &#9733; 148', 'Immortal &#9733; 149',
+                'Immortal &#9733; 150', 'Immortal &#9733; 151', 'Immortal &#9733; 152', 'Immortal &#9733; 153', 'Immortal &#9733; 154',
+                'Immortal &#9733; 155', 'Immortal &#9733; 156', 'Immortal &#9733; 157', 'Immortal &#9733; 158', 'Immortal &#9733; 159',
+                'Immortal &#9733; 160', 'Immortal &#9733; 161', 'Immortal &#9733; 162', 'Immortal &#9733; 163', 'Immortal &#9733; 164',
+                'Immortal &#9733; 165', 'Immortal &#9733; 166', 'Immortal &#9733; 167', 'Immortal &#9733; 168', 'Immortal &#9733; 169',
+                'Immortal &#9733; 170', 'Immortal &#9733; 171', 'Immortal &#9733; 172', 'Immortal &#9733; 173', 'Immortal &#9733; 174',
+                'Immortal &#9733; 175', 'Immortal &#9733; 176', 'Immortal &#9733; 177', 'Immortal &#9733; 178', 'Immortal &#9733; 179',
+                'Immortal &#9733; 180', 'Immortal &#9733; 181', 'Immortal &#9733; 182', 'Immortal &#9733; 183', 'Immortal &#9733; 184',
+                'Immortal &#9733; 185', 'Immortal &#9733; 186', 'Immortal &#9733; 187', 'Immortal &#9733; 188', 'Immortal &#9733; 189',
+                'Immortal &#9733; 190', 'Immortal &#9733; 191', 'Immortal &#9733; 192', 'Immortal &#9733; 193', 'Immortal &#9733; 194',
+                'Immortal &#9733; 195', 'Immortal &#9733; 196', 'Immortal &#9733; 197', 'Immortal &#9733; 198', 'Immortal &#9733; 199', 'Immortal &#9733; 200++'
+            ];
+
+        case 'MCL Championships':
+            return [
+                'MCL Weakly', 'MCL Season'            ];
+        default:
+            return ['Rank not found'];
+    }
+}
+
+            
+                rankSekarang.addEventListener('change', updateOptions);
+                rankTujuan.addEventListener('change', updateOptions);
+            });
+            </script>
+            
+            
+            
+
+
+
+
+
+            
+<script>
+    document.getElementById('jokiForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Mencegah form agar tidak submit secara default
+    
+        // Mengambil data dari form
+        const namaAkun = document.getElementById('namaAkun').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const loginAkun = document.getElementById('loginAkun').value;
+        const rankSekarang = document.getElementById('rankSekarang').value;
+        const rankTujuan = document.getElementById('rankTujuan').value;
+        const requestHero = document.getElementById('requestHero').value || "Tidak ada";
+        const catatan = document.getElementById('catatan').value || "Tidak ada catatan tambahan";
+    
+        // Membuat pesan WhatsApp
+        const pesan = `Halo, saya ingin memesan jasa joki MLBB dengan format berikut:
+        - Nama Akun: ${namaAkun}
+        - Email: ${email}
+        - Password: ${password}
+        - Log In Akun: ${loginAkun}
+        - Rank Sekarang: ${rankSekarang}
+        - Rank Tujuan: ${rankTujuan}
+        - Request Hero: ${requestHero}
+        - Catatan: ${catatan}`;
+    
+        // Membuat URL WhatsApp (gunakan format nomor internasional)
+        const whatsappURL = `https://wa.me/6285351221602?text=${encodeURIComponent(pesan)}`;
+    
+        // Redirect ke WhatsApp
+        window.location.href = whatsappURL;
+    });
+    </script>
+
+
+
+        
+    <script>
+        
+        // let slideIndex = 0;
+        // showSlides();
+
+        // function showSlides() {
+        //     let slides = document.getElementsByClassName("slides");
+        //     for (let i = 0; i < slides.length; i++) {
+        //         slides[i].style.display = "none";
+        //     }
+        //     slideIndex++;
+        //     if (slideIndex > slides.length) {
+        //         slideIndex = 1;
+        //     }
+        //     slides[slideIndex - 1].style.display = "block";
+        //     setTimeout(showSlides, 3000); // Change image every 3 seconds
+        // }
+
+
+        let slideIndex = 1; // Start from the first slide
+        let slideInterval;
+
+        showSlides(slideIndex);
+        autoShowSlides(); // Start the automatic slideshow
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slides");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) { 
+                slideIndex = 1 
+            }
+            if (n < 1) { 
+                slideIndex = slides.length 
+            }
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        function plusSlides(n) {
+            clearTimeout(slideInterval); // Stop automatic sliding
+            showSlides(slideIndex += n);
+            autoShowSlides(); // Restart the automatic slideshow
+        }
+
+        function autoShowSlides() {
+            slideInterval = setInterval(() => {
+                showSlides(slideIndex += 1);
+            }, 3000); // Change image every 3 seconds
+        }
+
+        // Initialize event listeners for manual navigation
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.prev').addEventListener('click', () => plusSlides(-1));
+            document.querySelector('.next').addEventListener('click', () => plusSlides(1));
+        });
+
+
+
+        
+        // function showSlides() {
+        //     let slides = document.querySelectorAll(".slides");
+        //     let dots = document.querySelectorAll(".dot");
+        //     for (let i = 0; i < slides.length; i++) {
+        //         slides[i].style.display = "none";  
+        //     }
+        //     slideIndex++;
+        //     if (slideIndex > slides.length) {slideIndex = 1}    
+        //     for (let i = 0; i < dots.length; i++) {
+        //         dots[i].className = dots[i].className.replace(" active", "");
+        //     }
+        //     slides[slideIndex-1].style.display = "block";  
+        //     dots[slideIndex-1].className += " active";
+        //     setTimeout(showSlides, 3000); // Change image every 3 seconds
+        // }
+
+        // function plusSlides(n) {
+        //     showSlides(slideIndex += n);
+        // }
+
+        // showSlides(); // Initial call
+
+
+
+
+
+
+
+
+
+
+        
+        
+
+// Fungsi untuk mengubah mode terang dan gelap
+function toggleMode() {
+    const body = document.body;
+    const modeToggle = document.getElementById('mode-toggle');
+
+    body.classList.toggle('light-mode');
+    if (body.classList.contains('light-mode')) {
+        modeToggle.classList.remove('fa-moon');
+        modeToggle.classList.add('fa-sun');
+    } else {
+        modeToggle.classList.remove('fa-sun');
+        modeToggle.classList.add('fa-moon');
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+            document.addEventListener('DOMContentLoaded', () => {
+        // Ambil tombol-tombol menu dan konten section
+        const buttons = document.querySelectorAll('.menu-button');
+        const sections = document.querySelectorAll('.content-section');
+        
+        // Fungsi untuk mengatur tombol aktif
+        function setActiveButton(activeId) {
+            buttons.forEach(button => {
+                if (button.id === activeId) {
+                    button.classList.add('active'); // Tambahkan kelas aktif pada tombol yang sesuai
+                } else {
+                    button.classList.remove('active'); // Hapus kelas aktif dari tombol lainnya
+                }
+            });
+        }
+
+        // Fungsi untuk menampilkan konten section
+        function showContentSection(targetId) {
+            sections.forEach(section => {
+                if (section.id === targetId) {
+                    section.style.display = 'block'; // Tampilkan konten yang sesuai
+                } else {
+                    section.style.display = 'none'; // Sembunyikan konten lainnya
+                }
+            });
+        }
+
+        // Secara default, set tombol "Joki MLBB" sebagai aktif dan tampilkan konten "Joki MLBB"
+        setActiveButton('btn-joki');
+        showContentSection('joki-mlbb');
+
+        // Tambahkan event listener pada tombol-tombol menu
+        buttons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                // Cegah aksi default link
+                event.preventDefault();
+                // Ambil ID tombol yang diklik
+                const activeId = event.target.id;
+                // Set tombol aktif
+                setActiveButton(activeId);
+                // Tampilkan konten sesuai dengan tombol yang diklik
+                const targetId = button.getAttribute('data-target'); // Mengambil id dari data-target
+                showContentSection(targetId);
+            });
+        });
+    });
+
+
+
+        
+    </script>
+    <script src="assets/js/main.js"></script>
+    
 </body>
 </html>
